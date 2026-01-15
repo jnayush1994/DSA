@@ -16,6 +16,5 @@ var isValid = function (s) {
             else return false;
         }
     }
-    if (stack.length === 0) return true;
-    else return false;
+    return stack.length === 0;
 };
