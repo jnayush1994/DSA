@@ -6,23 +6,18 @@ var evalRPN = function (tokens) {
     let stack = [];
     let operand_1 = operand_2 = 0;
 
+    let map = {
+        '+': (a, b) => a + b,
+        '-': (a, b) => a - b,
+        '*': (a, b) => a * b,
+        '/': (a, b) => Math.trunc(a / b)
+    };
+
     for (let i = 0; i < tokens.length; i++) {
-        if (tokens[i] === '+') {
+        if (map[tokens[i]]) {
             operand_2 = stack.pop();
             operand_1 = stack.pop();
-            stack.push(operand_1 + operand_2);
-        } else if (tokens[i] === '-') {
-            operand_2 = stack.pop();
-            operand_1 = stack.pop();
-            stack.push(operand_1 - operand_2);
-        } else if (tokens[i] === '*') {
-            operand_2 = stack.pop();
-            operand_1 = stack.pop();
-            stack.push(operand_1 * operand_2);
-        } else if (tokens[i] === '/') {
-            operand_2 = stack.pop();
-            operand_1 = stack.pop();
-            stack.push(Math.trunc(operand_1 / operand_2));
+            stack.push(map[tokens[i]](operand_1, operand_2));
         } else {
             stack.push(Number(tokens[i]));
         }
