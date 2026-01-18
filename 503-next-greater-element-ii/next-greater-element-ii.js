@@ -3,23 +3,24 @@
  * @return {number[]}
  */
 var nextGreaterElements = function (nums) {
-    let arr = [...nums, ...nums];
-    let output = Array(arr.length).fill(-1);
+    // let arr = [...nums, ...nums];
+    let output = Array(nums.length).fill(-1);
+    let n = nums.length;
     let stack = [];
 
-    stack.push(arr[arr.length - 1]);
-    output[output.length - 1] = -1;
+    stack.push(nums[nums.length - 1]);
+    // output[output.length - 1] = -1;
 
-    for (let i = arr.length - 2; i >= 0; i--) {
+    for (let i = (2 * nums.length) - 2; i >= 0; i--) {
         while (stack.length) {
-            if (arr[i] < stack[stack.length - 1]) {
-                output[i] = stack[stack.length - 1];
+            if (nums[i % n] < stack[stack.length - 1]) {
+                output[i % n] = stack[stack.length - 1];
                 break;
             } else {
                 stack.pop();
             }
         }
-        stack.push(arr[i]);
+        stack.push(nums[i % n]);
     }
-    return output.slice(0, Math.trunc((output.length / 2)));
+    return output;
 };
