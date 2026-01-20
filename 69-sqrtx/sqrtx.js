@@ -20,10 +20,10 @@ var mySqrt = function (x) {
     let r = Math.floor(x / 2);
 
     while (l <= r) {
-        let m = Math.floor((l + r) / 2);
-        if (x === m*m) return m;
-        else if (m*m > x) r = m - 1;
-        else if (m*m < x) l = m + 1;
+        let m = l + Math.floor((r - l) / 2);
+        if (x === m * m) return m;
+        else if (m * m > x) r = m - 1;
+        else if (m * m < x) l = m + 1;
     }
 
     return r;
