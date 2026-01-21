@@ -10,7 +10,6 @@ var search = function (nums, target) {
 
     while (l <= r) {
         m = l + Math.trunc((r - l) / 2);
-        console.log(l,r,m);
         if (nums[m] === target) return m;
         else if (nums[l] <= nums[m]) {
             if (target >= nums[l] && target < nums[m]) r = m - 1;
@@ -19,7 +18,6 @@ var search = function (nums, target) {
             if (target <= nums[r] && target > nums[m]) l = m + 1;
             else r = m - 1;
         }
-        console.log(l,r,m);
     }
     return -1;
 };
