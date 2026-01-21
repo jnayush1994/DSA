@@ -33,6 +33,6 @@ var solution = function (isBadVersion) {
             }
         }
 
-        return l;
+        return r;
     };
 };
