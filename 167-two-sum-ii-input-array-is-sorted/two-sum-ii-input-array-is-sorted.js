@@ -12,5 +12,4 @@ var twoSum = function (numbers, target) {
         else if((numbers[i] + numbers[j]) > target) j--;
         else i++;
     }
-    return[-1,-1];
 };
