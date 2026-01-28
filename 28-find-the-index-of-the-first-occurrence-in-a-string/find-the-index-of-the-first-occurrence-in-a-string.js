@@ -12,7 +12,7 @@ var strStr = function (haystack, needle) {
         let j = 0;
         for (j = 0; j < m; j++) {
             if (haystack[k] !== needle[j]) break;
-            else ++k;
+            else k++;
         }
         if(j === m) return i;
     }
