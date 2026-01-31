@@ -11,7 +11,7 @@ var lengthOfLongestSubstring = function (s) {
     while (j < s.length) {
         if (map[s[j]] !== undefined && map[s[j]] >= i) i = map[s[j]] + 1;
         map[s[j]] = j;
-        maxWindow = Math.max(maxWindow, (j - i + 1));
+        maxWindow = maxWindow > (j - i + 1) ? maxWindow : (j - i + 1);
         j++;
     }
 
