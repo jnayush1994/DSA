@@ -16,9 +16,9 @@ var maxSlidingWindow = function (nums, k) {
         if (j >= k - 1) {
             result.push(queue[0]);
             nums[i] === queue[0] && queue.shift();
-            ++i;
+            i++;
         }
-        ++j;
+        j++;
     }
 
     return result;
