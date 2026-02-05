@@ -11,16 +11,33 @@
  * @return {number[]}
  */
 var inorderTraversal = function (root) {
+    // let result = [];
+
+    // let traversal = function (curr) {
+    //     if (!curr) return;
+    //     traversal(curr.left);
+    //     result.push(curr.val);
+    //     traversal(curr.right);
+    // }
+
+    // traversal(root);
+
+    // return result;
+
     let result = [];
+    let current = root;
+    let stack = [];
 
-    let traversal = function (curr) {
-        if (!curr) return;
-        traversal(curr.left);
-        result.push(curr.val);
-        traversal(curr.right);
+    while (current || stack.length) {
+        while (current) {
+            stack.push(current);
+            current = current.left;
+        }
+        current = stack.pop();
+        result.push(current.val);
+        current = current.right;
+
     }
-
-    traversal(root);
 
     return result;
 };
