@@ -20,19 +20,43 @@ var postorderTraversal = function (root) {
     // }
     // traversal(root);
     // return result;
-    let s1 = [];
-    let s2 = [];
-    let current;
+    // let s1 = [];
+    // let s2 = [];
+    // let current;
 
-    if (root) s1.push(root);
-    else return [];
+    // if (root) s1.push(root);
+    // else return [];
 
-    while (s1.length) {
-        current = s1.pop();
-        s2.push(current.val);
-        if (current.left) s1.push(current.left);
-        if (current.right) s1.push(current.right);
+    // while (s1.length) {
+    //     current = s1.pop();
+    //     s2.push(current.val);
+    //     if (current.left) s1.push(current.left);
+    //     if (current.right) s1.push(current.right);
+    // }
+
+    // return s2.reverse();
+    let result = [];
+    let stack = [];
+    let peakNode = null;
+    let current = null;
+    let lastVisitedNode = null;
+
+    if (root) current = root;
+    else return result;
+
+    while (current || stack.length) {
+        while (current) {
+            stack.push(current);
+            current = current.left;
+        }
+        peakNode = stack[stack.length - 1];
+        if (peakNode.right && peakNode.right !== lastVisitedNode)
+            current = peakNode.right;
+        else {
+            lastVisitedNode = stack.pop();
+            result.push(lastVisitedNode.val);
+        }
     }
 
-    return s2.reverse();
+    return result;
 };
