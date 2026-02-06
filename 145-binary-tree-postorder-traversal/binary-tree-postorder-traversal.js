@@ -20,13 +20,12 @@ var postorderTraversal = function (root) {
     // }
     // traversal(root);
     // return result;
-    let result = [];
     let s1 = [];
     let s2 = [];
     let current;
 
     if (root) s1.push(root);
-    else return result;
+    else return [];
 
     while (s1.length) {
         current = s1.pop();
