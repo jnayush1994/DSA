@@ -39,8 +39,8 @@ var levelOrder = function (root) {
         if (!curr) return;
         if (!ans[level]) ans[level] = [];
         ans[level].push(curr.val);
-        traversal(curr.left, level + 1);
-        traversal(curr.right, level + 1);
+        traversal(curr.left, level+1);
+        traversal(curr.right, level+1);
     }
 
     traversal(root, 0);
