@@ -11,16 +11,22 @@
  * @return {number}
  */
 var maxDepth = function (root) {
-    let maxDepth = 0;
+    // let maxDepth = 0;
 
-    let traversal = function (current, depth) {
-        if (!current) return;
-        maxDepth = Math.max(maxDepth, depth);
-        traversal(current.left, depth + 1);
-        traversal(current.right, depth + 1);
-    };
+    // let traversal = function (current, depth) {
+    //     if (!current) return;
+    //     maxDepth = Math.max(maxDepth, depth);
+    //     traversal(current.left, depth + 1);
+    //     traversal(current.right, depth + 1);
+    // };
 
-    traversal(root, 1);
+    // traversal(root, 1);
 
-    return maxDepth;
+    // return maxDepth;
+    if (!root) return 0;
+
+    let maxLeft = maxDepth(root.left);
+    let maxRight = maxDepth(root.right);
+
+    return 1 + Math.max(maxLeft, maxRight);
 };
