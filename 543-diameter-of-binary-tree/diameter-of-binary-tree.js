@@ -18,7 +18,9 @@ var diameterOfBinaryTree = function (root) {
         let leftDepth = findDepth(curr.left);
         let rightDepth = findDepth(curr.right);
         let currentDepth = leftDepth + rightDepth;
+        
         maxDiameter = Math.max(maxDiameter, currentDepth);
+        
         return 1 + Math.max(leftDepth, rightDepth);
     }
 
