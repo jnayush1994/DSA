@@ -14,16 +14,16 @@ var goodNodes = function (root) {
     let goodNode = 0;
     let max = -Infinity;
 
-    let traversal = function (curr, max) {
+    let traversal = function (curr, max1) {
         if (!curr) return;
 
-        if (max <= curr.val) {
+        if (max1 <= curr.val) {
             ++goodNode;
-            max = curr.val;
+            max1 = curr.val;
         }
 
-        traversal(curr.left, max);
-        traversal(curr.right, max);
+        traversal(curr.left, max1);
+        traversal(curr.right, max1);
     }
 
     traversal(root, max);
