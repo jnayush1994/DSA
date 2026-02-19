@@ -21,7 +21,6 @@ var maxPathSum = function (root) {
 
         return curr.val + Math.max(maxLeft, maxRight);
     };
-
     traversal(root);
     return maxSumPath;
 };
