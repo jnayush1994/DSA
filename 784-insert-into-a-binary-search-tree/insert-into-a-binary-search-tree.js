@@ -17,18 +17,13 @@ var insertIntoBST = function (root, val) {
         node.val = val;
         return node;
     }
-
-    let traversal = function (curr, parent) {
+    let traversal = function (curr, parent = null) {
         if (!curr) {
             let newNode = new TreeNode();
             newNode.val = val;
 
-            if (parent.val > val) {
-                parent.left = newNode;
-            }
-            else {
-                parent.right = newNode;
-            }
+            if (parent.val > val) parent.left = newNode;
+            else parent.right = newNode;
 
             return;
         }
@@ -36,7 +31,6 @@ var insertIntoBST = function (root, val) {
         if (curr.val > val) traversal(curr.left, curr);
         else traversal(curr.right, curr);
     }
-
-    traversal(root, null);
+    traversal(root);
     return root;
 };
