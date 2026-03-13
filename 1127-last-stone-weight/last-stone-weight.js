@@ -10,5 +10,5 @@ var lastStoneWeight = function (stones) {
         if (largest - secondLargest > 0)
             heap.insert(largest - secondLargest)
     }
-    return heap.root() || 0;
+    return heap.extractRoot() || 0;
 };
