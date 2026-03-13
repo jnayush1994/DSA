@@ -7,7 +7,6 @@ var lastStoneWeight = function (stones) {
     while (heap.size() > 1) {
         let largest = heap.extractRoot();
         let secondLargest = heap.extractRoot();
-
         if (largest - secondLargest > 0)
             heap.insert(largest - secondLargest)
     }
