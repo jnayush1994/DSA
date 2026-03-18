@@ -10,8 +10,11 @@ var topKFrequent = function (nums, k) {
             frequencyMap[num] += 1;
         else
             frequencyMap[num] = 1;
-    }
+    } 
+
+
     const queue = new MinPriorityQueue(x => x.freq);
+    
     for (key in frequencyMap) {
         queue.push({ val: key, freq: frequencyMap[key] });
         if (queue.size() > k)
