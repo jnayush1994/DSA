@@ -7,8 +7,7 @@ var majorityElement = function (nums) {
     const n = nums.length;
 
     for (let num of nums) {
-        if (map[num]) ++map[num];
-        else map[num] = 1;
+        map[num] = map[num] ? ++map[num] : 1;
 
         if (map[num] > Math.trunc(n / 2))
             return num;
