@@ -4,7 +4,6 @@
  */
 var permute = function (nums) {
     const result = [];
-
     const backTrack = (path, currIdx) => {
         if(path.length === nums.length){
             result.push([...path]);
@@ -18,8 +17,6 @@ var permute = function (nums) {
             }
         }
     };
-
     backTrack([]);
-
     return result;
 };
