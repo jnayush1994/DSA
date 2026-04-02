@@ -5,7 +5,6 @@
  */
 var combine = function (n, k) {
     const result = [];
-
     const backTrack = (path, startIdx) => {
         if (path.length === k) {
             result.push([...path]);
@@ -17,8 +16,6 @@ var combine = function (n, k) {
             path.pop();
         }
     }
-
     backTrack([], 1);
-
     return result;
 };
