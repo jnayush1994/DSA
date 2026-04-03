@@ -4,9 +4,7 @@
  */
 var subsetsWithDup = function (nums) {
     const result = [];
-
     nums.sort((a, b) => a - b);
-
     const backTrack = (path, startIdx) => {
         result.push([...path]);
 
@@ -16,11 +14,8 @@ var subsetsWithDup = function (nums) {
             path.push(nums[i]);
             backTrack(path, i + 1);
             path.pop();
-
         }
     }
-
     backTrack([], 0);
-
     return result;
 };
