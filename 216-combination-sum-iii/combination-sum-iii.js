@@ -5,7 +5,6 @@
  */
 var combinationSum3 = function (k, n) {
     const result = [];
-
     const backTrack = (remainingSum, path, startIdx) => {
         if (path.length === k && remainingSum === 0)
             result.push([...path]);
@@ -16,8 +15,6 @@ var combinationSum3 = function (k, n) {
             path.pop();
         }
     };
-
     backTrack(n, [], 1);
-
     return result;
 };
