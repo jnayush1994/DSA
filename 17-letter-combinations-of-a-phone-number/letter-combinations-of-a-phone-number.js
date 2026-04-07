@@ -13,9 +13,7 @@ var letterCombinations = function (digits) {
         "8": "tuv",
         "9": "wxyz"
     }
-
     const result = [];
-
     const backTrack = (path, startIdx) => {
         let choices = '';
         if (startIdx < digits.length) {
@@ -29,10 +27,7 @@ var letterCombinations = function (digits) {
             backTrack(path, startIdx + 1)
             path.pop();
         }
-
     };
-
     backTrack([], 0);
-
     return result;
 };
