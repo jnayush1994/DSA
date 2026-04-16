@@ -11,6 +11,7 @@ var exist = function (board, word) {
     const backtrack = (x, y, nextIdx) => {
         if (nextIdx === word.length) {
             result = true;
+            return;
         }
         let original = board[x][y];
         board[x][y] = '#';
