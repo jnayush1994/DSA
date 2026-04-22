@@ -9,16 +9,12 @@ var twoCitySchedCost = function (costs) {
         const diffB = b[1] - b[0];
         return diffB - diffA;
     })
-
     let ans = 0;
-
     for (let i = 0; i < Math.trunc(costs.length / 2); i++) {
         ans += costs[i][0];
     }
-
     for (let i = Math.trunc(costs.length / 2); i < costs.length; i++) {
         ans += costs[i][1];
     }
-
     return ans;
 };
