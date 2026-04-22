@@ -16,8 +16,8 @@ var twoCitySchedCost = function (costs) {
         ans += costs[i][0];
     }
 
-    for (let j = Math.trunc(costs.length / 2); j < costs.length; j++) {
-        ans += costs[j][1];
+    for (let i = Math.trunc(costs.length / 2); i < costs.length; i++) {
+        ans += costs[i][1];
     }
 
     return ans;
