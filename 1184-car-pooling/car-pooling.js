@@ -8,7 +8,6 @@ var carPooling = function (trips, capacity) {
     let usedCapacity = 0;
     for (let i = 0; i < trips.length; i++) {
         let [passengers, from, to] = trips[i];
-
         loc[from] += passengers;
         loc[to] -= passengers;
     }
