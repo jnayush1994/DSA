@@ -4,7 +4,6 @@
  */
 var candy = function (ratings) {
     let n = ratings.length;
-
     if (n === 1) return n;
     let ltr = Array(n).fill(1);
     let rtl = Array(n).fill(1);
