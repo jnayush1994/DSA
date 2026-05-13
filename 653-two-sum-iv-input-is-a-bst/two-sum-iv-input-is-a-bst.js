@@ -20,7 +20,6 @@ var findTarget = function (root, k) {
         store.push(curr.val);
         traversal(curr.right);
     }
-
     traversal(root);
 
     let i = 0;
@@ -30,13 +29,10 @@ var findTarget = function (root, k) {
         let sum = store[i] + store[j];
         if (sum === k)
             return true;
-
         if (sum < k)
             i++;
-
         if (sum > k)
             j--;
     }
-
     return false;
 };
